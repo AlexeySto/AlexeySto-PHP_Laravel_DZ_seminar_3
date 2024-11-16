@@ -14,7 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home', [
+        'name' => 'Алексей',
+        'age' => 29,
+        'position' => 'Инженер',
+        'address' => 'г. Ростов, ул. Ленина, д. 19'
+    ]);
+});
+
+Route::get('/contacts', function () {
+    return view('contacts', [
+        'address' => 'г. Ростов, ул. Ленина, д. 19',
+        'post_code' => 152150,
+        'email' => 'alexey@test.ru',
+        'phone' => 89008887766
+    ]);
 });
 
 Route::get('/test_database', function () {
