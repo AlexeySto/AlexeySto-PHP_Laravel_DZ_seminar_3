@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,9 @@ Route::get('/test_database', function () {
 
     return "Сотрудник добавлен в базу данных!";
 });
+
+Route::get('get-employee-data',[EmployeeController:: class, 'index' ]);
+
+Route::post( 'store-form', [EmployeeController:: class, 'store']);
+
+Route::put(' /user/{id}', [EmployeeController:: class, 'update' ]);
